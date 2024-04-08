@@ -1,10 +1,7 @@
 const express = require('express');
+const routes = require('./routes');
+
 const app = express();
-
-app.use(express.json());
-
-app.get('/', (req,res) => {
-    res.status(200).send({ mensagem: 'Biblioteca Com Sequelize e Express'});
-});
+routes(app);
 
 module.exports = app;
