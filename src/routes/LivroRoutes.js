@@ -1,8 +1,12 @@
 const { Router } = require('express');
 const LivroController = require('../controllers/LivroController.js');
 
-const routes = Router();
+const router = Router();
 
-routes.get('/pessoas', LivroController.getLivros);
+router.get('/livros', LivroController.getLivros);
+router.get('/livros/:id', LivroController.getLivroByPK);
+router.put('/livros/:id', LivroController.updateLivro);
+router.post('/livros', LivroController.createLivro);
+router.delete('/livros/:id', LivroController.deleteLivro);
 
-module.exports = routes;
+module.exports = router;
